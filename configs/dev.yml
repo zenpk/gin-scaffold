@@ -1,0 +1,51 @@
+gin:
+  mode: "debug"
+zap:
+  path: "logs/"
+server:
+  host: "0.0.0.0"
+  port: 8080
+  domain: "127.0.0.1"
+cors:
+  whitelist:
+    - "localhost"
+    - "127.0.0.1"
+    - "."
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  username: "root"
+  password: "root"
+  database: "root"
+  charset: "utf8mb4"
+  parse_time: "true"
+  loc: "UTC"
+redis:
+  host: "127.0.0.1"
+  port: 6379
+  password: "root"
+  db: 0
+etcd:
+  endpoints:
+    - "127.0.0.1:2379"
+  dial_timeout: 5 # seconds
+  scheme: "etcd"
+jwt:
+  secret: "my_secret"
+  age_hour: 24 # 24 hours
+refresh_token:
+  age_hour: 720 # 30 days
+cookie:
+  access_token_age: 86400 # 1 day
+  refresh_token_age: 2592000 # 1 month
+  same_site: "none"
+  secure: 1
+datetime:
+  format:
+    date: "2006-01-02"
+    time: "2006-01-02 15:04:05"
+  timezone: 8 # GMT/UTC+8
+auth:
+  password_length: 4 # minimal password length
+snowflake:
+  node: 1
